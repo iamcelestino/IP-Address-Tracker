@@ -1,5 +1,5 @@
 
-import "./style/calculus.css";
+import "./style/style.css";
 
 class Calculus {
      constructor() {
