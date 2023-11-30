@@ -1,4 +1,5 @@
 
+
 *, ::before, *::after {
     margin: 0;
     padding: 0;
@@ -7,20 +8,25 @@
 
 
 body { 
-    background-color: aqua;
+    background-color: aquamarine;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-
-
-.description {
-    padding: 3em;
-    background-color: aliceblue;
-    position: absolute;
+input, button {
+    padding: 0.5rem 0.3rem;
+    margin-top: 1rem;
+    border: none;
 }
+
+input {
+    width: 80%;
+}
+
+
+
 
 .attribution { 
     font-size: 11px; 
