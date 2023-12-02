@@ -13,13 +13,10 @@ class IPaddress {
           return data;
      }
      UpadateUi (data) {
-          let paragraph = [];
-          for (let i = 0; i < 4; i++){
-              const p = document.createElement('p');
-              paragraph.push(p)
-          }
-          this.container.innerHTML =  paragraph[0];
-          console.log(paragraph)
+          const address = document.createElement('p');
+          
+          address.textContent = data.ip;
+          this.container.childNodes[1].append(address);
           console.log(data.ip, data.location.country, data.isp,  data.location.timezone);
      }
 }
