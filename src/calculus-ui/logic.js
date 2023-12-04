@@ -32,11 +32,12 @@ class IPaddress {
           
           const timezone = paragraph[2];
           timezone.textContent  =  data.location.timezone;
-          this.container.childNodes[3].append(timezone);
+          this.container.childNodes[5].append(timezone);
 
           const isp = paragraph[3];
           isp.textContent = data.isp;
           this.container.childNodes[7].append(isp);
+          console.log(data);
      }
 
 }
