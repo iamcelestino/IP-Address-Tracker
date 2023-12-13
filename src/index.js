@@ -7,7 +7,10 @@ form.addEventListener("submit", event => {
     event.preventDefault();
     const ip = form.address.value;
     ipAddress.getIpAddress(ip)
-        .then(data => ipAddress.UpadateUi(data))
+        .then(data => {
+            ipAddress.UpadateUi(data);
+            ipAddress.getMap(data);
+        })
         .catch(error => console.log(error));
 });
 

@@ -4,12 +4,10 @@ class IPaddress {
 
      constructor(container) {
           this.container = container;
-          this.IPaddressUrl = 'https://geo.ipify.org/api/v2/country?apiKey=at_Kp31QZqTgfJtLVeR8MGd64Em5ZDaq&';  
      }
 
-     async getIpAddress(ip) {
-          const query = `ipAddress=${ip}`;
-          const response = await fetch(this.IPaddressUrl + query);
+     async getIpAddress(ipAddress) {
+          const response = await fetch(`https://get.geojs.io/v1/ip/geo/${ipAddress}.json`);
           const data = await response.json();
           return data;
      }
@@ -27,17 +25,21 @@ class IPaddress {
           this.container.childNodes[1].append(ip);
           
           const location = paragraph[1];
-          location.textContent = data.location.country;
+          location.textContent = data.country;
           this.container.childNodes[3].append(location);
           
           const timezone = paragraph[2];
-          timezone.textContent  =  data.location.timezone;
+          timezone.textContent  =  data.timezone;
           this.container.childNodes[5].append(timezone);
+          console.log(data)
+     }
+     getMap(data) {
+          var map = L.map('map').setView([data.latitude, data.longitude], 13);
 
-          const isp = paragraph[3];
-          isp.textContent = data.isp;
-          this.container.childNodes[7].append(isp);
-          console.log(data);
+          L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          }).addTo(map);
      }
 
 }

@@ -7,13 +7,7 @@
 }
 
 
-body { 
-    background-color: aquamarine;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
+
 
 input, button {
     padding: 0.5rem 0.3rem;
@@ -45,6 +39,10 @@ button {
 
 .ip__information h3 {
     color: gray;
+}
+
+#map {
+    min-height: 100dvh;
 }
 
 .attribution { 
