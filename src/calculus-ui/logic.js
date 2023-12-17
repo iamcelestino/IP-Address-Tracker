@@ -1,11 +1,10 @@
 import "./style/style.css";
-import Ipbase from '@everapi/ipbase-js'
+import Ipbase from '@everapi/ipbase-js';
 
 class IPaddress {
 
      constructor(container) {
           this.container = container;
-          
      }
      async getIpAddress(ipAddress) {
           const ipBase = new Ipbase('ipb_live_IVbYzCVWz1BD7Hw0g0VyMq9BUGoW6J2jgc3oVBcJ')
@@ -45,7 +44,7 @@ class IPaddress {
           maxZoom: 19,
           attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           }).addTo(map);
-          console.log(data)
+          console.log(data);
      }
 };
 

@@ -1,5 +1,4 @@
 import IPaddress  from "./calculus-ui/logic";
-import Ipbase from '@everapi/ipbase-js'
 
 const ipAddress = new IPaddress(document.querySelector(".ip__information"));
 const form = document.querySelector('form');
