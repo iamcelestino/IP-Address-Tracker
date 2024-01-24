@@ -16,23 +16,22 @@ class IPaddress {
      }
      UpadateUi (data) {
 
-          const paragraph = [];
-          for (let i = 0; i < 3; i++) {
-               const p = document.createElement('p'); 
-               paragraph.push(p);  
-          }
-
-          const ip = paragraph[0];
-          ip.textContent = data.data.ip;
-          this.container.childNodes[1].append(ip);
+          const html = `
+          <div class="address">
+               <h3>IP Address</h3>
+               <p>${data.data.ip}</p>
+           </div>
+          <div class="location">
+               <h3>Location</h3>
+               <p>${data.data.location.country.name}</p>
+          </div>
+          <div class="ISP">
+               <h3>ISP</h3>
+               <p>${data.data.connection.isp}</p>
+          </div>
           
-          const location = paragraph[1];
-          location.textContent = data.data.location.country.name;
-          this.container.childNodes[3].append(location);
-          
-          const provider = paragraph[2];
-          provider.textContent  = data.data.connection.isp;
-          this.container.childNodes[5].append(provider);
+          `;
+          this.container.innerHTML = html;
      }
      getMap(data) {
           var map = L.map('map').setView([data.data.location.latitude, data.data.location.longitude], 13);
