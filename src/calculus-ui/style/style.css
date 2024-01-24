@@ -1,18 +1,14 @@
 
-
 *, ::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.wrapper {
-    position: relative;
-}
-
 .ip__info__container {
     background-color: blue;
-    padding: 2rem 2rem 0rem 2rem;
+    padding: 2rem 5rem 0rem 5rem;
+    position: relative;
 }
 
 h1 {
@@ -29,11 +25,14 @@ h1 {
     padding: 1rem;
     border-radius: 10px;
     text-align: center;
-    z-index: 1;
+    position: relative;
+    top: 80px;
+    z-index: 2;
 }
 
+
 .ip__information div {
-    margin-bottom: 1.2rem;
+   padding: 1rem;
 }
 
 .ip__information h3 {
@@ -41,13 +40,13 @@ h1 {
 }
 
 input, button {
-    padding: 0.5rem 0.3rem;
+    padding: 1rem 0.3rem;
     margin-top: 1rem;
     border: none;
 }
 
 input {
-    width: 80%;
+    width: 75%;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -57,9 +56,13 @@ button {
     border-bottom-right-radius: 10px;    
 }
 
-
 #map {
     min-height: 100dvh;
+    z-index: 1;
+}
+
+.my-div-icon {
+    background-color: blue;
 }
 
 .attribution { 
@@ -71,3 +74,16 @@ button {
     color: hsl(228, 45%, 44%); 
 }
 
+@media (min-width: 700px) {
+    .ip__information {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        top: 40px;
+    }
+
+    .location,
+    .ISP {
+        border-left: 2px solid rgb(65, 65, 65);
+    }
+
+}
