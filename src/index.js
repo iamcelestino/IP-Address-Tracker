@@ -6,6 +6,7 @@ const form = document.querySelector('form');
 form.addEventListener("submit", event => {
     event.preventDefault();
     const ip = form.address.value;
+    form.reset();
     ipAddress.getIpAddress(ip);
 });
 
